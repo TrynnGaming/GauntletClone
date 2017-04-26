@@ -52,6 +52,9 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -67,6 +70,9 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
     </Reference>
@@ -75,7 +81,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Character Scripts\BaseCharacter.cs" />
+    <Compile Include="Assets\Scripts\Character Scripts\Elf.cs" />
+    <Compile Include="Assets\Scripts\Character Scripts\Valkyrie.cs" />
+    <Compile Include="Assets\Scripts\Character Scripts\Warrior.cs" />
+    <Compile Include="Assets\Scripts\Character Scripts\Wizard.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\BaseEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Death.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Demon.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Ghost.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Grunt.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Lobber.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Sorcerer.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Thief.cs" />
+    <Compile Include="Assets\Scripts\Game Control\GameController.cs" />
+    <Compile Include="Assets\Scripts\Pickups\BasePickup.cs" />
+    <Compile Include="Assets\Scripts\Pickups\Food.cs" />
+    <Compile Include="Assets\Scripts\Pickups\Key.cs" />
+    <Compile Include="Assets\Scripts\Pickups\Potion.cs" />
+    <Compile Include="Assets\Scripts\Pickups\Treasure.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
