@@ -13,15 +13,29 @@ public class Warrior : BaseCharacter {
     private Vector3 startPos;
     private Vector3 tempPos;
 
+    //VARIABLE FOR CAMERA POS
+    public static Vector3 CameraPos;
+
+
+    /*-----------------------------------------------
+     START
+     -----------------------------------------------*/
     // Use this for initialization
     void Start () {
         startPos = transform.position;
         tempPos = transform.position;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+    /*-----------------------------------------------
+     UPDATE
+     -----------------------------------------------*/
+    // Update is called once per frame
+    void Update () {
+
+        //set CameraPos
+        CameraPos = transform.position;
+
+
 
         //-----------------
         //KEYBOARD CONTROLS
