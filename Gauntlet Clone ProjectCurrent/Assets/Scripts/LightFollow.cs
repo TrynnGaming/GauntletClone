@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightFollow : MonoBehaviour {
 
-    public static Vector3 tempPos;
+    Vector3 tempPos;
 
     // Use this for initialization
     void Start () {
@@ -13,8 +13,10 @@ public class LightFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        tempPos.x = Warrior.CameraPos.x;
-        tempPos.z = Warrior.CameraPos.z;
+
+
+        tempPos.x = CameraFollowObject.tempPos.x;
+        tempPos.z = CameraFollowObject.tempPos.z;
         tempPos.y = 10f;
         transform.position = tempPos;
     }

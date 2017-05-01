@@ -29,6 +29,9 @@ public class Valkyrie : BaseCharacter {
         tempPos = transform.position;
         direction = transform.eulerAngles;
 
+        //TOTAL CHARACTER DAMAGE OUTPUT
+        totalDamage = (damage + (magic * 0.2f));
+
         //Invoke healthDrain
         InvokeRepeating("DrainHealth", 2f, 2f);
     }

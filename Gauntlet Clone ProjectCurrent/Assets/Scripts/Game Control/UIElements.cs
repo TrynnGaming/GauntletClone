@@ -86,7 +86,7 @@ public class UIElements : MonoBehaviour {
         //IF PLAYER 2 NOT NULL
         if(GetComponent<GameControlScript>().player2)
         {
-            print("player to no null");
+            
             if (GetComponent<GameControlScript>().player2Character == 1) //if player 2 is warrior
             {
                 DrawWarriorStatsPlayer2();
@@ -272,7 +272,7 @@ public class UIElements : MonoBehaviour {
     void DrawWizardStatsPlayer2()
     {
         player2Name.color = purple;
-        player1Name.text = "Wizard";
+        player2Name.text = "Wizard";
         drawHealthPlayer2.text = "Health:" + GetComponent<GameControlScript>().wizard.health.ToString();
         drawTreasurePlayer2.text = "Treasure:" + GetComponent<GameControlScript>().wizard.treasureScore.ToString();
         drawKeysPlayer2.text = "Keys:" + GetComponent<GameControlScript>().wizard.keyCount.ToString();
@@ -282,7 +282,7 @@ public class UIElements : MonoBehaviour {
     void DrawElfStatsPlayer2()
     {
         player2Name.color = green;
-        player1Name.text = "Elf";
+        player2Name.text = "Elf";
         drawHealthPlayer2.text = "Health:" + GetComponent<GameControlScript>().elf.health.ToString();
         drawTreasurePlayer2.text = "Treasure:" + GetComponent<GameControlScript>().elf.treasureScore.ToString();
         drawKeysPlayer2.text = "Keys:" + GetComponent<GameControlScript>().elf.keyCount.ToString();

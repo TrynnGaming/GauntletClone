@@ -10,11 +10,14 @@ public class BaseCharacter : MonoBehaviour {
     -----------------------------------------------*/
 
     //BASE CHARACTER STATS
-    public int health;
-    public int armor;
+    public float health;
+    public float armor;
     public float moveSpeed;
     public float damage;
-    public int magic;
+    [HideInInspector] public float totalDamage;
+    public float magic;
+
+    //total damage == damage - (armor *.1)
 
     //health drain
     public int healthDrain;
@@ -24,7 +27,7 @@ public class BaseCharacter : MonoBehaviour {
 
     //treasure
     public int treasureScore;
-    public int randomTreasureIncrease;
+    [HideInInspector] public int randomTreasureIncrease;
 
     //keys
     public int keyCount;
