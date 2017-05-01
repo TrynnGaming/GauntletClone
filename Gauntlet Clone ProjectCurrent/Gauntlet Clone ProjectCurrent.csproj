@@ -90,8 +90,10 @@
     <Compile Include="Assets\Scripts\Enemy Scripts\Lobber.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Sorcerer.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Thief.cs" />
-    <Compile Include="Assets\Scripts\Game Control\GameController.cs" />
-    <Compile Include="Assets\Scripts\GameControlScript.cs" />
+    <Compile Include="Assets\Scripts\FPSScript.cs" />
+    <Compile Include="Assets\Scripts\Game Control\GameControlScript.cs" />
+    <Compile Include="Assets\Scripts\Game Control\UIElements.cs" />
+    <Compile Include="Assets\Scripts\LightFollow.cs" />
     <Compile Include="Assets\Scripts\Pickups\BasePickup.cs" />
     <Compile Include="Assets\Scripts\Pickups\Food.cs" />
     <Compile Include="Assets\Scripts\Pickups\Key.cs" />

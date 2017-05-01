@@ -9,8 +9,9 @@ public class CameraFollowObject : MonoBehaviour {
     -----------------------------------------------*/
     public static Vector3 tempPos;
 
+    //game control reference variable
+    GameControlScript gameControlScript;
     
-
     private void OnEnable()
     {
         //possibly try to get a reference to each class
@@ -25,7 +26,10 @@ public class CameraFollowObject : MonoBehaviour {
     -----------------------------------------------*/
     // Use this for initialization
     void Start () {
-		
+        //SET GAME CONTROLLER REFERENCE
+        GameObject gameController = GameObject.FindWithTag("GameController");
+        gameControlScript = gameController.GetComponent<GameControlScript>();
+
 	}
 
     /*-----------------------------------------------
@@ -33,7 +37,17 @@ public class CameraFollowObject : MonoBehaviour {
     -----------------------------------------------*/
     // Update is called once per frame
     void Update () {
-        tempPos = Warrior.CameraPos;
+
+        //interpolate
+        if(gameControlScript.player1Character == 3 && gameControlScript.player2Character == 1)
+        {
+            tempPos.x = Mathf.Lerp(Warrior.CameraPos.x, Wizard.CameraPos.x, 0.5f);
+            tempPos.z = Mathf.Lerp(Warrior.CameraPos.z, Wizard.CameraPos.z, 0.5f);
+
+        }
+
+        //tempPos = Warrior.CameraPos;
+
         transform.position = tempPos;
 	}
 }

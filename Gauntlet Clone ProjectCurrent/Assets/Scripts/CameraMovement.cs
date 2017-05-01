@@ -27,6 +27,8 @@ public class CameraMovement : MonoBehaviour {
 
         //set camera position to update with position of CameraFollowObject
 
+        
+
         tempPos.z = CameraFollowObject.tempPos.z - 8; //need to update the value with a variable when possible
         tempPos.x = CameraFollowObject.tempPos.x;
         tempPos.y = 12;                               //update with variable when possible
