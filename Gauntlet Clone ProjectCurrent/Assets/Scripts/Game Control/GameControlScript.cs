@@ -2,18 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameControlScript : MonoBehaviour {
 
     /*-----------------------------------------------
     DECLARATIONS
     -----------------------------------------------*/
     
-    //GAME OBJECT REFERENCES
-    public GameObject WarriorObject;
-    public GameObject ValkyrieObject;
-    public GameObject WizardObject;
-    public GameObject ElfObject;
-
+    
 
     //Camera follow Object
     public GameObject CameraFollowObject;
@@ -22,17 +18,37 @@ public class GameControlScript : MonoBehaviour {
     //PLAYER VARIABLES
     
     //bool to check for player existence
-    bool player1;
-    bool player2;
-    bool player3;
-    bool player4;
+    public bool player1;
+    public bool player2;
+    public bool player3;
+    public bool player4;
 
     //ints to assign character to player choice
-    int player1Character;
-    int player2Character;
-    int player3Character;
-    int player4Character;
+    public int player1Character;
+    public int player2Character;
+    public int player3Character;
+    public int player4Character;
 
+    //player 1 character enum
+    //public enum Player1Character { Warrior, Valkyrie, Wizard, Elf}
+    //public Player1Character player1CharacterChoice;
+
+    //player 2 character enum
+    //public enum Player2Character { Warrior, Valkyrie, Wizard, Elf}
+
+    //player 3 character enum
+    //public enum Player3Character { Warrior, Valkyrie, Wizard, Elf}
+
+    //player 4 character enum
+    //public enum Player4Character { Warrior, Valkyrie, Wizard, Elf}
+
+
+    //GAME OBJECT REFERENCES
+    public Warrior warrior;
+    public Valkyrie valkyrie;
+    public Wizard wizard;
+    public Elf elf;
+    
 
     void OnEnable()
     {
@@ -43,8 +59,8 @@ public class GameControlScript : MonoBehaviour {
         //TEST** 
         player1 = true;
         player2 = true;
-        player1Character = 1;
-        player2Character = 3;
+        player1Character = 3;
+        player2Character = 1;
         //ENDTEST**
 
     }
@@ -56,6 +72,9 @@ public class GameControlScript : MonoBehaviour {
 
     void Start()
     {
+
+        
+        
         //-----------------
         //PLAYER 1 CONNECTED
         //-----------------
@@ -65,28 +84,29 @@ public class GameControlScript : MonoBehaviour {
             if (player1Character == 1)
             {
                 //instantiate warrior
-                Instantiate(WarriorObject);
+                warrior = Instantiate(warrior) as Warrior;
+                
             }
 
             //player 1 chose valkyrie
             if (player1Character == 2)
             {
                 //instantiate valkyrie
-                Instantiate(ValkyrieObject);
+                valkyrie = Instantiate(valkyrie) as Valkyrie;
             }
 
             //player 1 chose wizard
             if(player1Character == 3)
             {
                 //instantiate wizard
-                Instantiate(WizardObject);
+                wizard = Instantiate(wizard) as Wizard;
             }
 
             //player 1 chose elf
             if(player1Character == 4)
             {
                 //instantiate elf
-                Instantiate(ElfObject);
+                elf = Instantiate(elf) as Elf;
             }
         }
 
@@ -99,28 +119,28 @@ public class GameControlScript : MonoBehaviour {
             if (player2Character == 1)
             {
                 //instantiate warrior
-                Instantiate(WarriorObject);
+                warrior = Instantiate(warrior) as Warrior;
             }
 
             //player 2 chose valkyrie
             if (player2Character == 2)
             {
                 //instantiate valkyrie
-                Instantiate(ValkyrieObject);
+                valkyrie = Instantiate(valkyrie) as Valkyrie;
             }
 
             //player 2 chose wizard
             if (player2Character == 3)
             {
                 //instantiate wizard
-                Instantiate(WizardObject);
+                wizard = Instantiate(wizard) as Wizard;
             }
 
             //player 2 chose elf
             if (player2Character == 4)
             {
                 //instantiate elf
-                Instantiate(ElfObject);
+                elf = Instantiate(elf) as Elf;
             }
         }
 
@@ -133,28 +153,28 @@ public class GameControlScript : MonoBehaviour {
             if (player3Character == 1)
             {
                 //instantiate warrior
-                Instantiate(WarriorObject);
+                warrior = Instantiate(warrior) as Warrior;
             }
 
             //player 3 chose valkyrie
             if (player3Character == 2)
             {
                 //instantiate valkyrie
-                Instantiate(ValkyrieObject);
+                valkyrie = Instantiate(valkyrie) as Valkyrie;
             }
 
             //player 3 chose wizard
             if (player3Character == 3)
             {
                 //instantiate wizard
-                Instantiate(WizardObject);
+                wizard = Instantiate(wizard) as Wizard;
             }
 
             //player 3 chose elf
             if (player3Character == 4)
             {
                 //instantiate elf
-                Instantiate(ElfObject);
+                elf = Instantiate(elf) as Elf;
             }
         }
 
@@ -167,28 +187,28 @@ public class GameControlScript : MonoBehaviour {
             if (player4Character == 1)
             {
                 //instantiate warrior
-                Instantiate(WarriorObject);
+                warrior = Instantiate(warrior) as Warrior;
             }
 
             //player 4 chose valkyrie
             if (player4Character == 2)
             {
                 //instantiate valkyrie
-                Instantiate(ValkyrieObject);
+                valkyrie = Instantiate(valkyrie) as Valkyrie;
             }
 
             //player 4 chose wizard
             if (player4Character == 3)
             {
                 //instantiate wizard
-                Instantiate(WizardObject);
+                wizard = Instantiate(wizard) as Wizard;
             }
 
             //player 4 chose elf
             if (player4Character == 4)
             {
                 //instantiate elf
-                Instantiate(ElfObject);
+                elf = Instantiate(elf) as Elf;
             }
         }
 
@@ -206,6 +226,9 @@ public class GameControlScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
-	}
+
+        
+    }
+    
+    
 }

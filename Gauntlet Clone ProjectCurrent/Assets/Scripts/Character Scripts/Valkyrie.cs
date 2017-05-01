@@ -16,6 +16,8 @@ public class Valkyrie : BaseCharacter {
     //VARIABLE FOR CAMERA POS
     public static Vector3 CameraPos;
 
+    //player death
+    bool playerDead;
 
     /*-----------------------------------------------
      START
@@ -26,6 +28,9 @@ public class Valkyrie : BaseCharacter {
         startPos = transform.position;
         tempPos = transform.position;
         direction = transform.eulerAngles;
+
+        //Invoke healthDrain
+        InvokeRepeating("DrainHealth", 2f, 2f);
     }
 
     /*-----------------------------------------------
@@ -34,6 +39,8 @@ public class Valkyrie : BaseCharacter {
     // Update is called once per frame
     void Update()
     {
+
+        
 
         //set CameraPos
         CameraPos = transform.position;
@@ -179,5 +186,50 @@ public class Valkyrie : BaseCharacter {
 
         transform.position = tempPos;
 
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Food")
+        {
+            health += foodHealthIncrease;
+            //print(health);
+
+            if (health > 100)
+            {
+                health = 100;
+
+            }
+        }
+
+        if (other.gameObject.tag == "Treasure")
+        {
+            randomTreasureIncrease = Random.Range(10, 51);
+            treasureScore += randomTreasureIncrease;
+        }
+
+        if (other.gameObject.tag == "Key")
+        {
+            keyCount += 1;
+            print(keyCount);
+        }
+
+        if (other.gameObject.tag == "Potion")
+        {
+            potionCount += 1;
+        }
+    }
+
+
+    void DrainHealth()
+    {
+        //HEALTH DRAIN OVER TIME
+        health -= healthDrain;
+        if (health < 1)
+        {
+            playerDead = true;
+        }
+        //print(health);
     }
 }

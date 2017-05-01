@@ -10,13 +10,30 @@ public class BaseCharacter : MonoBehaviour {
     -----------------------------------------------*/
 
     //BASE CHARACTER STATS
-    public float health;
+    public int health;
     public int armor;
     public float moveSpeed;
     public float damage;
     public int magic;
-    public float healthDrain;
+
+    //health drain
+    public int healthDrain;
+
+    //health food increase
+    public int foodHealthIncrease;
+
+    //treasure
+    public int treasureScore;
+    public int randomTreasureIncrease;
+
+    //keys
+    public int keyCount;
+    //potions
+    public int potionCount;
+
+
     
+
 
     /*-----------------------------------------------
     START
@@ -33,7 +50,11 @@ public class BaseCharacter : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        //HEALTH DRAIN OVER TIME
-        health -= healthDrain * Time.deltaTime; 
+         
 	}
+
+
+
+    
+
 }
