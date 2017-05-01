@@ -30,18 +30,19 @@ public class GameControlScript : MonoBehaviour {
     public int player4Character;
 
     //player 1 character enum
-    //public enum Player1Character { Warrior, Valkyrie, Wizard, Elf}
-    //public Player1Character player1CharacterChoice;
+    public enum Player1Character { Warrior, Valkyrie, Wizard, Elf}
+    public Player1Character player1Choice;
 
     //player 2 character enum
-    //public enum Player2Character { Warrior, Valkyrie, Wizard, Elf}
-
+    public enum Player2Character { Warrior, Valkyrie, Wizard, Elf}
+    public Player2Character player2Choice;
     //player 3 character enum
-    //public enum Player3Character { Warrior, Valkyrie, Wizard, Elf}
+    public enum Player3Character { Warrior, Valkyrie, Wizard, Elf}
+    public Player3Character player3Choice;
 
     //player 4 character enum
-    //public enum Player4Character { Warrior, Valkyrie, Wizard, Elf}
-
+    public enum Player4Character { Warrior, Valkyrie, Wizard, Elf}
+    public Player4Character player4Choice;
 
     //GAME OBJECT REFERENCES
     public Warrior warrior;
@@ -59,8 +60,8 @@ public class GameControlScript : MonoBehaviour {
         //TEST** 
         player1 = true;
         player2 = true;
-        player1Character = 3;
-        player2Character = 1;
+        player1Character = 1;
+        player2Character = 3;
         //ENDTEST**
 
     }
@@ -85,7 +86,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate warrior
                 warrior = Instantiate(warrior) as Warrior;
-                
+                player1Choice = Player1Character.Warrior;
             }
 
             //player 1 chose valkyrie
@@ -93,6 +94,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate valkyrie
                 valkyrie = Instantiate(valkyrie) as Valkyrie;
+                player1Choice = Player1Character.Valkyrie;
             }
 
             //player 1 chose wizard
@@ -100,6 +102,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate wizard
                 wizard = Instantiate(wizard) as Wizard;
+                player1Choice = Player1Character.Wizard;
             }
 
             //player 1 chose elf
@@ -107,6 +110,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate elf
                 elf = Instantiate(elf) as Elf;
+                player1Choice = Player1Character.Elf;
             }
         }
 
@@ -120,6 +124,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate warrior
                 warrior = Instantiate(warrior) as Warrior;
+                player2Choice = Player2Character.Warrior;
             }
 
             //player 2 chose valkyrie
@@ -127,6 +132,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate valkyrie
                 valkyrie = Instantiate(valkyrie) as Valkyrie;
+                player2Choice = Player2Character.Valkyrie;
             }
 
             //player 2 chose wizard
@@ -134,6 +140,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate wizard
                 wizard = Instantiate(wizard) as Wizard;
+                player2Choice = Player2Character.Wizard;
             }
 
             //player 2 chose elf
@@ -141,6 +148,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate elf
                 elf = Instantiate(elf) as Elf;
+                player2Choice = Player2Character.Elf;
             }
         }
 
@@ -154,6 +162,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate warrior
                 warrior = Instantiate(warrior) as Warrior;
+                player3Choice = Player3Character.Warrior;
             }
 
             //player 3 chose valkyrie
@@ -161,6 +170,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate valkyrie
                 valkyrie = Instantiate(valkyrie) as Valkyrie;
+                player3Choice = Player3Character.Valkyrie;
             }
 
             //player 3 chose wizard
@@ -168,6 +178,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate wizard
                 wizard = Instantiate(wizard) as Wizard;
+                player3Choice = Player3Character.Wizard;
             }
 
             //player 3 chose elf
@@ -175,6 +186,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate elf
                 elf = Instantiate(elf) as Elf;
+                player3Choice = Player3Character.Elf;
             }
         }
 
@@ -188,6 +200,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate warrior
                 warrior = Instantiate(warrior) as Warrior;
+                player4Choice = Player4Character.Warrior;
             }
 
             //player 4 chose valkyrie
@@ -195,6 +208,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate valkyrie
                 valkyrie = Instantiate(valkyrie) as Valkyrie;
+                player4Choice = Player4Character.Valkyrie;
             }
 
             //player 4 chose wizard
@@ -202,6 +216,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate wizard
                 wizard = Instantiate(wizard) as Wizard;
+                player4Choice = Player4Character.Wizard;
             }
 
             //player 4 chose elf
@@ -209,6 +224,7 @@ public class GameControlScript : MonoBehaviour {
             {
                 //instantiate elf
                 elf = Instantiate(elf) as Elf;
+                player4Choice = Player4Character.Elf;
             }
         }
 

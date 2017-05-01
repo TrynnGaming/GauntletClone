@@ -15,6 +15,8 @@ public class Warrior : BaseCharacter {
     private Vector3 tempPos;
     private Vector3 direction;
 
+    public GameObject WarriorSwordObject;
+
     //VARIABLE FOR CAMERA POS
     public static Vector3 CameraPos;
 
@@ -32,7 +34,8 @@ public class Warrior : BaseCharacter {
         tempPos = transform.position;
         direction = transform.eulerAngles;
 
-
+        //TOTAL CHARACTER DAMAGE OUTPUT
+        totalDamage = (damage + (magic * 0.2f));
 
         //Invoke healthDrain
         InvokeRepeating("DrainHealth", 2f, 2f);
@@ -182,13 +185,22 @@ public class Warrior : BaseCharacter {
 
         }
 
-        
+
+        //***TEST**
+        //spawn attack with mouse
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(WarriorSwordObject);
+            
+        }
+        //**ENDTEST**
+
         //----------------
         //GAMEPAD CONTROLS
         //----------------
 
 
-        //transform.position = tempPos;
+        transform.position = tempPos;
         
 
 	}
@@ -197,6 +209,10 @@ public class Warrior : BaseCharacter {
 
     private void OnTriggerEnter(Collider other)
     {
+
+        //--------------
+        //COLLIDED WITH PICKUP
+        //--------------
         if (other.gameObject.tag == "Food")
         {
             health += foodHealthIncrease;
@@ -218,17 +234,29 @@ public class Warrior : BaseCharacter {
         if (other.gameObject.tag == "Key")
         {
             keyCount += 1;
-            print(keyCount);
+            //print(keyCount);
         }
 
         if (other.gameObject.tag == "Potion")
         {
             potionCount += 1;
         }
+
+
+        //--------------
+        //COLLIDED WITH ENEMY
+        //--------------
+        if(other.gameObject.tag == "ghost")
+        {
+            
+            
+        }
+
+
     }
 
 
-    
+
     void DrainHealth()
     {
         //HEALTH DRAIN OVER TIME
